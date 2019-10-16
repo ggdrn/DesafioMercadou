@@ -1,0 +1,33 @@
+* {
+ box-sizing: border-box;
+}
+#texto{
+  color: #FFFFFF;
+}
+body {
+  margin: 0;
+}
+#main {
+  display: flex;
+  min-height: calc(100vh - 40vh);
+}
+#main > article {
+  flex: 1;
+}
+#main > nav,
+#main > aside {
+  flex: 0 0 10vw;
+  background: #FAFAFA;
+}
+#main > nav {
+  order: -1;
+}
+header, footer, article, nav, aside {
+  padding: 1em;
+}
+header, footer {
+  background-image: url("fundo.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 20vh;
+}
