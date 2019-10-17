@@ -7,19 +7,19 @@
 body {
   margin: 0;
 }
-#main {
+#app {
   display: flex;
   min-height: calc(100vh - 40vh);
 }
-#main > article {
+#app > article {
   flex: 1;
 }
-#main > nav,
-#main > aside {
+#app > nav,
+#app > aside {
   flex: 0 0 10vw;
   background: #FAFAFA;
 }
-#main > nav {
+#app > nav {
   order: -1;
 }
 header, footer, article, nav, aside {
@@ -30,4 +30,10 @@ header, footer {
   background-repeat: no-repeat;
   background-size: 100%;
   height: 20vh;
+}
+footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height: 10vh;
 }
