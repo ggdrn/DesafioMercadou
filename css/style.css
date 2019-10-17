@@ -16,7 +16,7 @@ body {
 }
 #app > nav,
 #app > aside {
-  flex: 0 0 10vw;
+  flex: 0 0 5vw;
   background: #FAFAFA;
 }
 #app > nav {

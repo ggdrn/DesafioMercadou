@@ -21,7 +21,17 @@
         <ol>
           <p>Crie uma página web que resolva os seguintes problemas:</p>
           <p><b>a)</b> Crie um input que ao receber um número, mostre apenas os números primos logo em baixo.</p>
-          <p><b>Bônus:</b> criar validação no input (não aceitar texto ou caracteres especiais)</p>
+          <p><b>Bônus:</b> Criar validação no input (não aceitar texto ou caracteres especiais)</p>
+          <div class="form-group">
+            <h4><b>Digite um valor:</b></h4>
+            <input type="password" class="form-control" placeholder="Insira um valor">
+            <!-- <span class="help-block">This is some help text that breaks onto a new line and may extend more than one line.</span> -->
+            <br>
+            <center>
+              <button type="submit" class="btn btn-primary btn-lg active" v-on:click="Primo(value)">Validar</button>
+            </center>
+            <h4><b>{{result}}</b></h4>
+        </div>
           <p><b>b)</b> Crie um input que ao receber os caracteres (), [] e {} informe logo abaixo se texto digitado é balanceado, por exemplo:</p>
           ([{}]) = balanceado
           ([]]} = desbalanceado
@@ -33,18 +43,47 @@
 
 
       </article>
-      <nav></nav>
-      <aside></aside>
+    <nav></nav>
+    <aside></aside>
   </div>
-  <!--Função javascript -->
-  <script type="text/javascript">
-  new Vue({
-    el:"#app",
-    data: {
-      link: "https://github.com/ggdrn/DesafioMercadou"
+      <!--Função javascript -->
+      <script type="text/javascript">
+      new Vue({
+        el:"#app",
+        data: {
+          value: 0,
+          result: [
+            {value: 0}
+          ],
+          error: ""
+        },
+        methods: {
+          Primo(num){
+           // verifica se o numero digitado é "1", que não é primo
+           if(num!=1){
+            for (let i = 2; i < num; i++)
+              if (num % i == 0) return false;
+            return num !== 1;
+            }
+        }
+      //   verificaPrimo(){
+      //     // verifica se é número
+      //     if(!isNaN(num)){
+      //       // verifica se é primo
+      //       for(let i=1;i<= this.value ;i++){
+      //         if (primo(num)) {
+      //           this.result.push(num);
+      //           this.error = null;
+      //         }
+      //     }
+      //     else{
+      //       this.error = "Insira um valor válido";
+      //     }
+      //   }
+      // }
     }
   })
-  </script>
-  <footer id="texto"><center>Desenvolvido por <a href="https://github.com/ggdrn" target="_blank">Gustavo Garcia ©<a/></center></footer>
+      </script>
+      <footer id="texto"><center>Desenvolvido por <a href="https://github.com/ggdrn" target="_blank">Gustavo Garcia ©<a/></center></footer>
   </body>
 </html>
