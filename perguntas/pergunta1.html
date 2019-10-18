@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
-     <header><center><h1 id="texto"> Desafio Mercadou <h1></center></header>
+    <header><center><h1 id="texto"> Desafio Mercadou <h1></center></header>
     <div id="app">
       <article>
         <h2><b>Questão 1:</b></h2>
@@ -36,58 +36,59 @@
               <b>Atenção:</b> {{a.error}}
             </div>
             <div v-else></div>
+          </div>
+          <p><b>B)</b> Crie um input que ao receber os caracteres (), [] e {} informe logo abaixo se texto digitado é balanceado, por exemplo:</p>
+          <p>([{}]) = balanceado</p>
+          <p>([]]} = desbalanceado</p>
+          <p>([foo]{bar}) = balanceado</p>
+          <p>(foo){bar} = balanceado</p>
+          <p>(f){o}[o} = desbalanceado</p>
+          <p>({foo}[baar]) = balanceado</p>
+          <p><b>Bônus:</b> verificar ordem de fechamento, exemplo:</p>
+          <p>{(}) = desbalanceado</p>
+          <div class="form-group">
+            <h4><b>Digite um valor:</b></h4>
+            <input type="text" v-model="b.value" class="form-control" placeholder="Insira um valor">
+            <br>
+            <button type="submit" class="btn btn-primary btn-lg btn-block" v-on:click="balancing">Validar</button>
+            <br>
+            <div class="alert alert-success" role="alert" v-if="b.result != ''">
+              <b>Resultado:</b> {{b.result}}
+            </div>
+            <div v-else></div>
+            <div class="alert alert-danger" role="alert" v-if="b.error != ''">
+              <b>Atenção:</b> {{b.error}}
+            </div>
+            <div v-else></div>
+          </div>
+          <p><b>C)DESAFIO:</b> Crie um input que ao receber um número mostra a sequência
+          Fibonnacci de 0 até o número informado, exemplo:</p>
+          <p>input = 7</p>
+          <p>retorno = 0,1, 1, 2, 3, 5</p>
+          <p>input = 25</p>
+          <p>retorno = 0,1, 1, 2, 3, 5, 8, 13, 21</p>
+          <p><b>Bônus:</b> criar validação no input (não aceitar texto ou caracteres especiais e
+          números negativos)</p>
+          <div class="form-group">
+            <h4><b>Digite um valor:</b></h4>
+            <input type="text" v-model="c.value" class="form-control" placeholder="Insira um valor">
+            <br>
+            <button type="submit" class="btn btn-primary btn-lg btn-block" v-on:click="sequenceFibonnacci">Validar</button>
+            <br>
+            <div class="alert alert-success" role="alert" v-if="c.result != ''">
+              <b>Resultado:</b> {{c.result}}
+            </div>
+            <div v-else></div>
+            <div class="alert alert-danger" role="alert" v-if="c.error != ''">
+              <b>Atenção:</b> {{c.error}}
+            </div>
+            <div v-else></div>
+          </ol>
+          </article>
+          <nav></nav>
+          <aside></aside>
         </div>
-        <p><b>B)</b> Crie um input que ao receber os caracteres (), [] e {} informe logo abaixo se texto digitado é balanceado, por exemplo:</p>
-        <p>([{}]) = balanceado</p>
-        <p>([]]} = desbalanceado</p>
-        <p>([foo]{bar}) = balanceado</p>
-        <p>(foo){bar} = balanceado</p>
-        <p>(f){o}[o} = desbalanceado</p>
-        <p>({foo}[baar]) = balanceado</p>
-        <p><b>Bônus:</b> verificar ordem de fechamento, exemplo:</p>
-        <p>{(}) = desbalanceado</p>
-        <div class="form-group">
-          <h4><b>Digite um valor:</b></h4>
-          <input type="text" v-model="b.value" class="form-control" placeholder="Insira um valor">
-          <br>
-          <button type="submit" class="btn btn-primary btn-lg btn-block" v-on:click="balancing">Validar</button>
-          <br>
-          <div class="alert alert-success" role="alert" v-if="b.result != ''">
-            <b>Resultado:</b> {{b.result}}
-          </div>
-          <div v-else></div>
-          <div class="alert alert-danger" role="alert" v-if="b.error != ''">
-            <b>Atenção:</b> {{b.error}}
-          </div>
-          <div v-else></div>
       </div>
-      <p><b>C)DESAFIO:</b> Crie um input que ao receber um número mostra a sequência
-      Fibonnacci de 0 até o número informado, exemplo:</p>
-      <p>input = 7</p>
-      <p>retorno = 0,1, 1, 2, 3, 5</p>
-      <p>input = 25</p>
-      <p>retorno = 0,1, 1, 2, 3, 5, 8, 13, 21</p>
-      <p><b>Bônus:</b> criar validação no input (não aceitar texto ou caracteres especiais e
-      números negativos)</p>
-      <div class="form-group">
-        <h4><b>Digite um valor:</b></h4>
-        <input type="text" v-model="c.value" class="form-control" placeholder="Insira um valor">
-        <br>
-        <button type="submit" class="btn btn-primary btn-lg btn-block" v-on:click="sequenceFibonnacci">Validar</button>
-        <br>
-        <div class="alert alert-success" role="alert" v-if="c.result != ''">
-          <b>Resultado:</b> {{c.result}}
-        </div>
-        <div v-else></div>
-        <div class="alert alert-danger" role="alert" v-if="c.error != ''">
-          <b>Atenção:</b> {{c.error}}
-        </div>
-        <div v-else></div>
-    </ol>
-      </article>
-    <nav></nav>
-    <aside></aside>
-  </div>
       <!--Função javascript -->
       <script type="text/javascript" src="js/pergunta1.js"></script>
       <footer id="texto"><center>Desenvolvido por <a href="https://github.com/ggdrn" target="_blank">Gustavo Garcia ©<a/></center></footer>
