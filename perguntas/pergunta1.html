@@ -24,29 +24,44 @@
           <p><b>Bônus:</b> Criar validação no input (não aceitar texto ou caracteres especiais)</p>
           <div class="form-group">
             <h4><b>Digite um valor:</b></h4>
-            <input type="text" v-model="value" class="form-control" placeholder="Insira um valor">
+            <input type="text" v-model="a.value" class="form-control" placeholder="Insira um valor">
             <br>
             <button type="submit" class="btn btn-primary btn-lg btn-block" v-on:click="verificaPrimo">Validar</button>
             <br>
-            <div class="alert alert-success" role="alert" v-if="result != ''">
-              <b>Resultado:</b> {{result}}
+            <div class="alert alert-success" role="alert" v-if="a.result != ''">
+              <b>Resultado:</b> {{a.result}}
             </div>
             <div v-else></div>
-            <div class="alert alert-danger" role="alert" v-if="error != ''">
-              <b>Atenção:</b> {{error}}
+            <div class="alert alert-danger" role="alert" v-if="a.error != ''">
+              <b>Atenção:</b> {{a.error}}
             </div>
             <div v-else></div>
         </div>
-          <p><b>B)</b> Crie um input que ao receber os caracteres (), [] e {} informe logo abaixo se texto digitado é balanceado, por exemplo:</p>
-          ([{}]) = balanceado
-          ([]]} = desbalanceado
-          <p>([foo]{bar}) = balanceado</p>
-          <p>(foo){bar} = balanceado</p>
-          <p>(f){o}[o} = desbalanceado</p>
-          <p>({foo}[baar]) = balanceado</p>
-        </ol>
-
-
+        <p><b>B)</b> Crie um input que ao receber os caracteres (), [] e {} informe logo abaixo se texto digitado é balanceado, por exemplo:</p>
+        <p>([{}]) = balanceado</p>
+        <p>([]]} = desbalanceado</p>
+        <p>([foo]{bar}) = balanceado</p>
+        <p>(foo){bar} = balanceado</p>
+        <p>(f){o}[o} = desbalanceado</p>
+        <p>({foo}[baar]) = balanceado</p>
+        <p><b>Bônus:</b> verificar ordem de fechamento, exemplo:</p>
+        <p>{(}) = desbalanceado</p>
+        <div class="form-group">
+          <h4><b>Digite um valor:</b></h4>
+          <input type="text" v-model="value" class="form-control" placeholder="Insira um valor">
+          <br>
+          <button type="submit" class="btn btn-primary btn-lg btn-block" v-on:click="verificaPrimo">Validar</button>
+          <br>
+          <div class="alert alert-success" role="alert" v-if="result != ''">
+            <b>Resultado:</b> {{result}}
+          </div>
+          <div v-else></div>
+          <div class="alert alert-danger" role="alert" v-if="error != ''">
+            <b>Atenção:</b> {{error}}
+          </div>
+          <div v-else></div>
+      </div>
+    </ol>
       </article>
     <nav></nav>
     <aside></aside>
