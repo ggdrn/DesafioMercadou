@@ -32,15 +32,15 @@ new Vue({
       return value !== 1;
       }
     },
-    verificaPrimo(){
+    checkPrimo(){
       // Vamos iniciar a variável que vai receber o resultado como um objeto vazio, para zerar o resultado.
       this.a.result = [];
       // verifica se é nulo
       if(this.a.value == null){
         this.a.error = "Digite algum valor";
       }
-      // verifica se é um numero
-      else if(!isNaN(this.a.value)){
+      // verifica se é um numero válido positivo
+      else if(Math.sign(this.a.value) == 1){
         // verifica se é primo
         for(let i=1;i<= this.a.value ;i++){
           if (this.primo(i)) {
@@ -49,16 +49,15 @@ new Vue({
           }
         }
       }
-      else this.a.error = "Insira um valor válido";
+      else
+        return this.a.error = "Insira um valor válido";
       // Ao final do processo, vamos adicionar null ao valor do campo input, para limpar a entrada
       this.a.value = null;
       },
-      // O código feito até aqui é referente Questão 1, letra B
+      // O código feito aqui é referente Questão 1, letra B
     balancing(){
-      if(this.b.value == null){
-        this.b.error = "Digite algum valor";
-        return; // Usamos um return para interromper a função
-      }
+      if(this.b.value == null)
+        return this.b.error = "Digite algum valor"; // Usamos um return para interromper a função
       // Inicair os valores como vazio
       this.b.result = [];
       this.b.aux = [];
@@ -73,10 +72,8 @@ new Vue({
           this.b.aux.push(aux[i]);
       }
       // Agora, verificamos se foi inserido algum valor válido para o balaceamento
-      if(this.b.aux == "" || this.b.aux == null){// se não, retornamos para o usário
-        this.b.error = "Digite um dado válido para o balaceamento";
-        return;
-      }
+      if(this.b.aux == "" || this.b.aux == null)// se não, retornamos para o usário
+        return this.b.error = "Digite um dado válido para o balaceamento";
       // A variável validate é responsável por informar se o dado está balanceado
       let validate = true;
       let array = [];
@@ -107,6 +104,28 @@ new Vue({
     	  this.b.error = "O dado inserido: "+this.b.value+" está desbalanceado";
       // No fim da operação, vamos zerar o input
       this.b.value = null;
+    },
+    // O código feito aqui é referente Questão 1, letra C
+    sequenceFibonnacci(){
+      this.c.result = [];
+      if(this.c.value == null)
+        return this.c.error = "Digite algum valor";
+      else if(Math.sign(this.c.value) != 1)
+        return this.c.error = "Insira um valor válido";
+
+      this.c.result = [];
+      let number = 0;
+      let next_number = 1;
+      let aux;
+
+      while ( number <= this.c.value ){
+        this.c.result += number+", ";
+        aux = next_number;
+        next_number = next_number + number;
+        number = aux;
+      }
+      this.c.value = null;
+      this.c.error = "";
     }
   }
 })
