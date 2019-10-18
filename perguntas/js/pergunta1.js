@@ -6,9 +6,7 @@ new Vue({
     result: []
   },
   methods: {
-    add(){
-      alert(this.value);
-    },
+    // O código feito aqui é referente Questão 1, letra A
     primo(num){
      // Primeiro, vamos verificar se o numero digitado é "1", pois este numero
      // não é primo primo
