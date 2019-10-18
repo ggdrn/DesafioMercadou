@@ -51,6 +51,21 @@ new Vue({
     else this.a.error = "Insira um valor válido";
     // Ao final do processo, vamos adicionar null ao valor do campo input, para limpar a entrada
     this.a.value = null;
+    },
+    // O código feito até aqui é referente Questão 1, letra B
+    balaceamento(){
+      if(this.b.value == null){
+        this.b.error = "Digite algum valor";
+      }
+      this.b.result = [];
+      let aux = this.b.value.split("");
+      for(let i=0;i<= aux.length;i++){
+        if(aux[i] == "(")
+          if(aux[i+1] == "[")
+            if(aux[i+2] == "{")
+              this.b.result = "Balanceado";
+
+      }
     }
   }
 })
