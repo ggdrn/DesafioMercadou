@@ -24,13 +24,19 @@
           <p><b>Bônus:</b> Criar validação no input (não aceitar texto ou caracteres especiais)</p>
           <div class="form-group">
             <h4><b>Digite um valor:</b></h4>
-            <input type="password" class="form-control" placeholder="Insira um valor">
-            <!-- <span class="help-block">This is some help text that breaks onto a new line and may extend more than one line.</span> -->
+            <input type="text" v-model="value" class="form-control" placeholder="Insira um valor">
+            <!-- <span class="help-block">Escolha um valor para acharmos os numeros primos, exemplo: valor 5, resultado: 2,3,5.</span> -->
             <br>
-            <center>
-              <button type="submit" class="btn btn-primary btn-lg active" v-on:click="Primo(value)">Validar</button>
-            </center>
-            <h4><b>{{result}}</b></h4>
+            <button type="submit" class="btn btn-primary btn-lg btn-block" v-on:click="verificaPrimo">Validar</button>
+            <br>
+            <div class="alert alert-success" role="alert" v-if="result != ''">
+              <b>Resultado:</b> {{result}}
+            </div>
+            <div v-else></div>
+            <div class="alert alert-danger" role="alert" v-if="error != ''">
+              <b>Atenção:</b> {{error}}
+            </div>
+            <div v-else></div>
         </div>
           <p><b>b)</b> Crie um input que ao receber os caracteres (), [] e {} informe logo abaixo se texto digitado é balanceado, por exemplo:</p>
           ([{}]) = balanceado
@@ -47,43 +53,7 @@
     <aside></aside>
   </div>
       <!--Função javascript -->
-      <script type="text/javascript">
-      new Vue({
-        el:"#app",
-        data: {
-          value: 0,
-          result: [
-            {value: 0}
-          ],
-          error: ""
-        },
-        methods: {
-          Primo(num){
-           // verifica se o numero digitado é "1", que não é primo
-           if(num!=1){
-            for (let i = 2; i < num; i++)
-              if (num % i == 0) return false;
-            return num !== 1;
-            }
-        }
-      //   verificaPrimo(){
-      //     // verifica se é número
-      //     if(!isNaN(num)){
-      //       // verifica se é primo
-      //       for(let i=1;i<= this.value ;i++){
-      //         if (primo(num)) {
-      //           this.result.push(num);
-      //           this.error = null;
-      //         }
-      //     }
-      //     else{
-      //       this.error = "Insira um valor válido";
-      //     }
-      //   }
-      // }
-    }
-  })
-      </script>
+      <script type="text/javascript" src="js/pergunta1.js"></script>
       <footer id="texto"><center>Desenvolvido por <a href="https://github.com/ggdrn" target="_blank">Gustavo Garcia ©<a/></center></footer>
   </body>
 </html>
