@@ -59,7 +59,6 @@ new Vue({
         this.b.error = "Digite algum valor";
         return; // Usamos um return para interromper a função
       }
-
       // Inicair os valores como vazio
       this.b.result = [];
       this.b.aux = [];
@@ -78,18 +77,20 @@ new Vue({
         this.b.error = "Digite um dado válido para o balaceamento";
         return;
       }
-      // A variável validate é responsável por informar se o dado irá está balanceado
+      // A variável validate é responsável por informar se o dado está balanceado
       let validate = true;
       let array = [];
+      // vamos pegar a posição que cada entrada está para podermos balan
       array[0] = this.b.aux.indexOf("(");
       array[1] = this.b.aux.indexOf(")");
       array[2] = this.b.aux.indexOf("[");
       array[3] = this.b.aux.indexOf("]");
       array[4] = this.b.aux.indexOf("{");
       array[5] = this.b.aux.indexOf("}");
+      console.log(this.b.aux);
       console.log(array);
       /* sabemos que cada index correspnde ao um valor positivo, então, se entre cada
-      par possuir algum inteiros positivo, i indice foi balanceado, se não, está desbalanceado */
+      par possuir algum inteiros positivo, o array foi balanceado, se não, está desbalanceado */
       if((array[0] == -1 && array[1] >= 0) || (array[0] >= 0 && array[1] == -1))
         validate = false;
 
@@ -98,15 +99,6 @@ new Vue({
 
       if((array[4] == -1 && array[5] >= 0) || (array[4] >= 0 && array[5] == -1))
         validate = false;
-
-      // if((array[0] == -1 && array[1] != 1) || (array[0] != 0 && array[1] == -1))
-      //   validate = false;
-      //
-      // if((array[2] == -1 && array[3] != 3) || (array[2] != 2 && array[3] == -1))
-      //   validate = false;
-      //
-      // if((array[4] == -1 && array[5] != 5) || (array[4] != 4 && array[5] == -1))
-      //   validate = false;
 
       if(validate){
         this.b.result = "O dado inserido: "+this.b.value+" está balanceado";
