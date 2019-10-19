@@ -9,8 +9,7 @@ function greet (person) {
  }
 }
 greet({ name: 'amy' })
-/* Resposta: No javascript Tipos primitivos são passados por valor, e são imutáveis,
-  enqunanto Objetos são passados por referência, e são mutáveis.
+/* Resposta:
   A cada vez que você cria um novo objeto, o JavaScript reserva um espaço para esse objeto na memória.
   Alguns bytes da memória do seu computador são reservados para guardar as informações desse novo objeto criado.
   E a cada novo objeto criado, um novo espaço na memória é ocupado.
@@ -38,7 +37,8 @@ Dog.bark = function () {
 let fido = new Dog('fido')
 fido.bark()
 /* Resposta: O que o código está tentando fazer quando faz fido.bark() é executar uma função com outra função,
- desse modo, o código não vai funcionar, para executar do forma que está escrita, é necessário transformar
+ desse modo, o código não vai funcionar.Para executar no es5 temos que colocar dog.prototype.bark. para
+  executar do forma que está escrita,vamos usar es6, é necessário transformar
  Dog em uma classe com o método Bark. Segue abaixo o exemplo:  */
 class Dog {
 	constructor(name){
@@ -81,4 +81,17 @@ p.then(function(valor) {
 });
   /* Bônus: Como podemos resolver um array de promises com javascript? Escreva
   um exemplo.
+  O método Promise.all(iterable), onde seja um objeto, como um Array ou String. Este método retorna
+  uma única Promise que resolve quando todas as promises no argumento iterável forem
+  resolvidas ou quando o iterável passado como argumento não contém promises.
   */
+
+let promise1 = Promise.resolve(3);
+let promise2 = 42;
+let promise3 = new Promise(function(resolve, reject) {
+  setTimeout(resolve, 100, 'foo');
+});
+
+Promise.all([promise1, promise2, promise3]).then(function(values) {
+  console.log(values);
+});
