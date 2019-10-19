@@ -16,7 +16,7 @@ greet({ name: 'amy' })
   O que eu quero dizer é que, sempre que você faz isso no seu código: {}; você está criando um novo objeto.
   Com isso, o resultado do exemplo acima deu false, porque são duas variáveis diferentes! Cada um foi criado em um espaço
   diferente da memória!
-  Solução: ao invez de usar person == { name: 'amy' } vamos usar person.name == 'amy, pois persom.nome
+  Solução: ao invés de usar person == { name: 'amy' } vamos usar person.name == 'amy', pois persom.nome
   é um valor do tipo string sendo comparada com outra string, no caso, "amy". Segue o código abaixo: */
 function greet (person) {
  if (person.name == 'amy') {
@@ -56,7 +56,7 @@ fido.bark();
   RESPOSTA: Sim, JavaScript usa comunicação assíncrona. Promise é um objeto usado para
   processamento assíncrono. Um Promise (de "promessa") representa um valor que pode estar
   disponível agora, no futuro ou nunca.
-  Uma Promise é um objeto que representa a eventual conclusão ou falha de uma operação assincrona.
+  Uma Promise é um objeto que representa a eventual conclusão ou falha de uma operação assíncrona.
   Como a maioria das pessoas consomem promisses já criadas.
   Essencialmente, uma promise é um objeto retornado para o qual você adiciona callbacks, em vez de passar
   callbacks para uma função.
@@ -81,7 +81,7 @@ p.then(function(valor) {
 });
   /* Bônus: Como podemos resolver um array de promises com javascript? Escreva
   um exemplo.
-  O método Promise.all(iterable), onde seja um objeto, como um Array ou String. Este método retorna
+  Resposta: O método Promise.all(iterable), onde seja um objeto, como um Array ou String. Este método retorna
   uma única Promise que resolve quando todas as promises no argumento iterável forem
   resolvidas ou quando o iterável passado como argumento não contém promises.
   */

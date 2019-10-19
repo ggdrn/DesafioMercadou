@@ -3,21 +3,21 @@ new Vue({
   data: {
     // o objeto 'a', refere as variáveis usadas para resolver a pergunta 1, A
     a: {
-      value: null,
+      value: "",
       error: "",
       result: []
     },
     // o objeto 'b', refere as variáveis usadas para resolver a pergunta 1, B
     // Nessa questão, vamo usar uma variável auxiliar para guardar os valores refrentes ao esperados
     b: {
-      value: null,
+      value: "",
       error: "",
       result: [],
       aux: []
     },
     // o objeto 'c', refere as variáveis usadas para resolver a pergunta 1, C
     c: {
-      value: null,
+      value: "",
       error: "",
       result: []
     }
@@ -36,7 +36,7 @@ new Vue({
       // Vamos iniciar a variável que vai receber o resultado como um objeto vazio, para zerar o resultado.
       this.a.result = [];
       // verifica se é nulo
-      if(this.a.value == null){
+      if(this.a.value == ""){
         this.a.error = "Digite algum valor";
       }
       // verifica se é um numero válido positivo
@@ -51,12 +51,12 @@ new Vue({
       }
       else
         return this.a.error = "Insira um valor válido";
-      // Ao final do processo, vamos adicionar null ao valor do campo input, para limpar a entrada
-      this.a.value = null;
+      // Ao final do processo, vamos adicionar vazio ao valor do campo input, para limpar a entrada
+      this.a.value = "";
       },
       // O código feito aqui é referente Questão 1, letra B
     balancing(){
-      if(this.b.value == null)
+      if(this.b.value == "")
         return this.b.error = "Digite algum valor"; // Usamos um return para interromper a função
       // Inicair os valores como vazio
       this.b.result = [];
@@ -103,12 +103,12 @@ new Vue({
       }else
     	  this.b.error = "O dado inserido: "+this.b.value+" está desbalanceado";
       // No fim da operação, vamos zerar o input
-      this.b.value = null;
+      this.b.value = "";
     },
     // O código feito aqui é referente Questão 1, letra C
     sequenceFibonnacci(){
       this.c.result = [];
-      if(this.c.value == null)
+      if(this.c.value == "")
         return this.c.error = "Digite algum valor";
       else if(Math.sign(this.c.value) != 1)
         return this.c.error = "Insira um valor válido";
@@ -124,7 +124,7 @@ new Vue({
         next_number = next_number + number;
         number = aux;
       }
-      this.c.value = null;
+      this.c.value = "";
       this.c.error = "";
     }
   }
