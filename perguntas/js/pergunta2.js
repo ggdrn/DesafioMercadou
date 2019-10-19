@@ -38,7 +38,7 @@ Dog.bark = function () {
 let fido = new Dog('fido')
 fido.bark()
 /* Resposta: O que o código está tentando fazer quando faz fido.bark() é executar uma função com outra função,
- desse modo, o código não vai funcionar, para executar do forma que está escrita, é nescessário transformar
+ desse modo, o código não vai funcionar, para executar do forma que está escrita, é necessário transformar
  Dog em uma classe com o método Bark. Segue abaixo o exemplo:  */
 class Dog {
 	constructor(name){
@@ -50,8 +50,35 @@ class Dog {
 }
 let fido = new Dog('fido');
 fido.bark();
-/* DESAFIO: Javascript é uma linguagem síncrona ou assíncrona? Explique para
-que serve “promises” em javascript e como podemos resolver-las (informe
-pelo menos duas formas)
-Bônus: Como podemos resolver um array de promises com javascript? Escreva
-um exemplo. */
+/* C) DESAFIO: Javascript é uma linguagem síncrona ou assíncrona? Explique para
+  que serve “promises” em javascript e como podemos resolver-las (informe
+  pelo menos duas formas)
+  RESPOSTA: Sim, JavaScript usa comunicação assíncrona. Promise é um objeto usado para
+  processamento assíncrono. Um Promise (de "promessa") representa um valor que pode estar
+  disponível agora, no futuro ou nunca.
+  Uma Promise é um objeto que representa a eventual conclusão ou falha de uma operação assincrona.
+  Como a maioria das pessoas consomem promisses já criadas.
+  Essencialmente, uma promise é um objeto retornado para o qual você adiciona callbacks, em vez de passar
+  callbacks para uma função.
+  Para resolver uma Promise podemos utilizar a função resolve, passando como parâmetro
+  um valor que será acessível através de nossa Promise resolvida: */
+  function request() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Promise resolvida");
+        }, 5000);
+    });
+}
+
+  /* Ou podemos usar o método then(), este possui dois argumentos, ambos são "call back functions",
+   sendo uma para o sucesso e outra para o fracasso da promessa. */
+  p.then(quandoRealizada, quandoRejeitada);
+
+p.then(function(valor) {
+   // sucesso
+  }, function(motivo) {
+  // rejeitada
+});
+  /* Bônus: Como podemos resolver um array de promises com javascript? Escreva
+  um exemplo.
+  */
